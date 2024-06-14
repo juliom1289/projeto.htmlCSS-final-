@@ -1,0 +1,172 @@
+/*entre style de Embed code in the <head> of your html -> google fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;1,600&display=swap');
+
+/*declaração de variaveis para otimização de código*/
+:root {
+    --cor-principal:#000000;
+    --cor-secundaria:#F6F6F6;
+    --cor-terciaria:#22D4FD;
+
+    --font-principal: "Krona One", sans-serif;
+    --font-secundaria: "Montserrat", sans-serif;
+}
+
+/*arquivo css precisa estar na mesma pasta que o html
+sites para criação de palhetas
+ADOBE COLOR
+COLOR HUNT
+COLOR TOOL*/
+
+/*remove espaçamento e margem de todos os elementos
+  -> para ter controle dos posicionamentos da página*/
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    
+    /*garante que elementos não saiam da tela main*/
+    box-sizing: border-box;
+    background-color: var(--cor-principal);
+    /*color -> especifico para titulo, subtitulo e parágrafo*/
+    color: var(--cor-secundaria);
+}
+
+.cabecalho {
+    /*ao add 4 padding, esse é add aos 4 cantos*/
+    padding: 2% 0 0 15%;
+}
+
+.cabecalho_menu {
+    display: flex;
+    /*gap de 80px entre home e sobre mim*/
+    gap: 80px;
+    
+}
+
+.cabecalho__menu__link {
+    font-family: var(--font-secundaria);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--cor-terciaria);
+    text-decoration: none;
+}
+
+/* strong se refere ao texto destacado strong no html em <p>
+
+strong{
+    color:#22D4FD;
+}*/
+/*.titulo-destaque subclasse de strong*/
+.titulo-destaque {
+    color: var(--cor-terciaria);
+}
+
+.apresentacao {
+    /* primeira %, vertical, segunda % horizontal*/
+    padding: 5% 15%;
+    display: flex;
+    /*alinhamento para com o elemento de maior altura*/
+    align-items: center;
+    /*cria espaços entre as sessões (elemento filho) de informação definidas no html*/
+    justify-content: space-between;
+    gap: 5.125rem;
+}
+
+/*WH de largura e altura da sessão são definidos no figma*/
+.apresentacao__conteudo {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+/*font family name -> google fonts*/
+.apresentacao__conteudo__titulo {
+    font-size: 2.25rem;
+    font-family: var(--font-principal);
+}
+
+.apresentacao__conteudo__paragrafo {
+    font-size: 1.5rem;
+    font-family: var(--font-secundaria);
+    font-weight: 400;
+
+}
+
+.apresentacao__links {
+    display: flex;
+    justify-content: space-between;
+    /*ao mudar flex direction, todas as outras propriedades também serão alteradas*/
+    flex-direction: column;
+    /*centralizado na vertical agr*/
+    align-items: center;
+    gap: 32px;
+}
+
+.apresentacao__links__layout__subtitulo {
+    font-family: var(--font-principal);
+    font-weight: 400;
+    font-size: 1.5rem;
+
+}
+
+.apresentacao__links__layout {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    width: 50%;
+    text-align: center;
+    border-radius: 8px;
+    border: 2px solid var(--cor-terciaria);
+    font-size: 1.5rem;
+    padding: 21.5px 0;
+    text-decoration: none;
+    color: var(--cor-secundaria);
+    font-family: var(--font-secundaria);
+    font-weight: 600;
+}
+
+/*mudança de apresentação quando mouse passa em cima*/
+.apresentacao__links__layout:hover {
+   background-color: var(--cor-principal);
+}
+
+.apresentacao__imagem__joana {
+    width: 50%;
+}
+
+.footer_p_and_background {
+    color: var(--cor-principal);
+    background-color: var(--cor-terciaria);
+
+    padding: 24px;
+    text-align: center;
+    font-family: var(--font-secundaria);
+    font-size: 1.5rem;
+    font-weight: 400;
+
+}
+
+/*alteração de componentes de midia a partir da ultrapassagem dum tamanho x*/
+@media (max-width: 1200px) {
+    .cabecalho {
+        padding: 10%;
+    }
+
+    .cabecalho_menu {
+        justify-content: center;
+    }
+    .apresentacao {
+        /*column-reverse troca a ordem dos elementos*/
+        flex-direction: column-reverse;
+        padding: 5%;
+    }
+
+    .apresentacao__conteudo {
+        /*auto garante que width preencha todo o espaço que a tela a provê*/
+        width: auto;
+    }
+}
